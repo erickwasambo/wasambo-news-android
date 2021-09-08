@@ -70,10 +70,6 @@ The [Junit](http://junit.org/junit4/) tests run on the JVM, no need for emulator
 
 
     $ ./gradlew testDebug
-    
-**Run a single unit test in the `debug flavor`:**
-
-    $ ./gradlew testDebug --tests="*MainActivityTest*"
 
     
 **Running the Instrumentation Tests:**
