@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="newsData"
+            type="com.wasambo.news.api.models.articles.Article" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground">
+
+        <LinearLayout
+            android:id="@+id/news_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@+id/news_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="2"
+                android:text="@{newsData.title}"
+                android:textColor="@color/title_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/news_by_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="2"
+                android:text="@{newsData.byline}"
+                android:textColor="@color/publisher_color"
+                android:textSize="13dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:gravity="end|center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+                <TextView
+                    android:id="@+id/sourceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textAllCaps="true"
+                    android:fontFamily="sans-serif"
+                    android:text="@{newsData.source}"
+                    android:textStyle="bold"
+                    android:textColor="@color/publisher_color"
+                    android:textSize="13dp" />
+                <ImageView
+                    android:layout_marginStart="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_date"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/publishedDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="sans-serif"
+                    android:text="@{newsData.publishedDate}"
+                    android:textColor="@color/publisher_color"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/ic_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_arrow"
+            tools:ignore="ContentDescription" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/news_text_layout"
+            android:background="@color/placeholder_bg" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/news_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_alignTop="@+id/news_text_layout"
+            android:layout_alignBottom="@+id/news_text_layout"
+            android:layout_centerVertical="true"
+            app:civ_border_width="0dp" />
+    </RelativeLayout>
+</layout>

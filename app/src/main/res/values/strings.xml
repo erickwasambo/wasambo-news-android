@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Wasambo News</string>
+    <string name="nav_header_title">Erick Wasambo</string>
+    <string name="nav_header_subtitle">erickwasambo@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_article_detail">Article Detail</string>
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">drawer close</string>
+    <string name="menu_more">More</string>
+    <string name="menu_search">Search</string>
+</resources>
